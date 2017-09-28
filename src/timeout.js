@@ -1,22 +1,15 @@
-class Timeout {
-  constructor(){
-    this.timeCount = 0;
-    this.store.bind(this)
-    this.log.bind(this)
-  }
+let timeCount = 0;
 
+const sharedTimeout = {
   store(time){
-    this.timeCount += time
-  }
+    timeCount += time
+  },
 
   log(){
-    console.log(`Curr Timeout: ${this.timeCount}`)
+    console.log(`Curr timeCount: ${timeCount}`)
   }
 }
 
-const sharedTimeout = new Timeout()
-
 var exports = module.exports = {
   sharedTimeout,
-  Timeout
 }
